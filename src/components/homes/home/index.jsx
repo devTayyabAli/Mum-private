@@ -20,6 +20,44 @@ const HomeOne = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="fix">
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <div id='portalContainer' style={{
+                display:'none',
+                zIndex: '8',
+                width: '90vw',
+                height: 'fit-content',
+              }}>
+                <div style={
+                  {
+                    display: 'flex',
+                    justifyContent: 'end',
+                  }
+                }>
+                  <button style={{
+                    background: 'white',
+                    position:'fixed',
+                    color: 'black',
+                    paddingLeft: '16px',
+                    paddingRight: '16px',
+                    paddingTop: '12px',
+                    paddingBottom: '12px',
+                    fontWeight: '700',
+                    borderRadius: '7px',
+                    zIndex:'10'
+                  }} onClick={() => {
+                    var portalElement = document.getElementById('personalPortal')
+                    var portalContainer = document.getElementById('portalContainer')
+                    portalElement.innerHTML = ""
+                    portalContainer.style.display = "none"
+                  }}>Close</button>
+                </div>
+                <section id="personalPortal"></section>
+              </div>
+            </div>
             <HeroSlider />
             <FeatureArea />
             <AboutArea />
